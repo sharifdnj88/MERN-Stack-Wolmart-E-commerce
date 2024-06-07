@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 import { getLoggedInUser } from './features/auth/authApiSlice';
 import { getAllPermission, getAllRoles, getAllUser } from './features/user/userApiSlice';
 import './App.css';
+import { getAllBrand, getAllProductCategories, getAllProductTag, getAllProducts } from './features/product/productApiSlice';
 
 function App() {
 
@@ -22,6 +23,10 @@ function App() {
     dispatch(getAllPermission());
     dispatch(getAllRoles());
     dispatch(getAllUser());
+    dispatch(getAllBrand());
+    dispatch(getAllProductTag());
+    dispatch(getAllProductCategories());
+    dispatch(getAllProducts());
   },[dispatch]);
   
 

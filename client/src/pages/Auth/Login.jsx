@@ -5,9 +5,11 @@ import { errorToast } from "../../utils/toast";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../../features/auth/authApiSlice";
 import { getAuthSelector, setMessageEmpty } from "../../features/auth/authSlice";
+import { BiShow, BiHide } from "react-icons/bi";
 
 const Login = () => {
 
+	const [showPassword, setShowPassword] = useState(false);
 	const dispatch = useDispatch();
 	const { error, message, user } = useSelector(getAuthSelector);
 	const navigate = useNavigate();
@@ -16,6 +18,11 @@ const Login = () => {
 		email: "",
 		password: ""
 	});
+
+	// show or Hide password
+	const handleShowPassword = () => {
+		setShowPassword((preve) => !preve);
+	};
 
 	// handle input change
 	const handleInputChange = (e) => {
@@ -70,8 +77,11 @@ const Login = () => {
 									<div className="form-group">
 										<input name="email" value={input.email} onChange={handleInputChange} className="form-control" type="text" placeholder="Email" />
 									</div>
-									<div className="form-group">
-										<input name="password" value={input.password} onChange={handleInputChange} className="form-control" type="text" placeholder="Password" />
+									<div className="form-group d-flex" style={{position: "relative"}}>
+										<input name="password" value={input.password} onChange={handleInputChange} className="form-control" type={showPassword ? "text" : "password"} placeholder="Password" />
+										<span className="password-show" onClick={handleShowPassword} >
+											{showPassword ? <BiShow /> : <BiHide />}
+										</span>
 									</div>
 									<div className="form-group">
 										<button className="btn btn-primary btn-block" type="submit">Login</button>

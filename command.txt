@@ -4,3 +4,33 @@
 4. npm i @reduxjs/toolkit
 5. npm i react-redux
 6. npm install sass
+
+
+Product 4 Types
+1. simple product
+2. variable product
+3. group product
+4. external or affiliate product
+
+Table
+tanstack table
+npm i react-data-table-component
+
+https://www.youtube.com/@LearnwithSumit
+https://www.coderstrust.net/public/course-details/fullstackwebdevelopmentmern?fbclid=IwZXh0bgNhZW0CMTAAAR0msJf7Ti_rSpipwvN9Rx61yZDEfk-W8SWurdLsG6xoOpbRPTRYpFoFgyQ_aem_AbMzEQwoOMdifk9UcLBJs-ne0VH5p1EjnXlefQwBmVSFDbn3yKRwq4QIhTx0cEfRqS_Ab_Zy99hQykICcwX1KP7u
+
+https://www.youtube.com/playlist?list=PLgH5QX0i9K3q_7q9vZ5-EWpoL2bMuFJFV
+
+https://www.youtube.com/watch?v=AN3t-OmdyKA
+
+https://www.youtube.com/@6PackProgrammer/playlists
+
+https://www.youtube.com/@StackLearner/playlists
+
+https://resource.fyi/
+
+https://github.com/IsAmitprajapati?tab=repositories
+
+
+
+MONGODB_URI = mongodb+srv://abusaiddnj548:sharif971@cluster0.x9yzbwo.mongodb.net/amitecom

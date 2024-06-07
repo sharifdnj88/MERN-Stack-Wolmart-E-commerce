@@ -6,6 +6,10 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import userRouter from "./route/user.js";
 import authRouter from "./route/auth.js";
+import brandRouter from "./route/brand.js";
+import tagRouter from "./route/tag.js";
+import categoryRouter from "./route/category.js";
+import productRouter from "./route/product.js";
 import permissionRouter from "./route/permission.js";
 import roleRouter from "./route/role.js";
 
@@ -35,6 +39,10 @@ app.use("/api/v1/user", userRouter);
 app.use("/api/v1/permission", permissionRouter);
 app.use("/api/v1/role", roleRouter);
 app.use("/api/v1/auth", authRouter);
+app.use("/api/v1/brand", brandRouter);
+app.use("/api/v1/tag", tagRouter);
+app.use("/api/v1/category", categoryRouter);
+app.use("/api/v1/product", productRouter);
 
 // use error handler
 

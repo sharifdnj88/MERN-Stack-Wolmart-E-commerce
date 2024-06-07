@@ -19,14 +19,17 @@ const Sidebar = () => {
                         { user?.role?.permissions?.includes("Orders") && <li className={`${location.pathname === "/orders" ? "active" : ""}`}> 
                             <Link to="/users"><i className="fa fa-bolt"></i> <span>Orders</span></Link>
                         </li> }            
-                        { user?.role?.permissions?.includes("Products") && <li className={`${location.pathname === "/products" ? "active" : ""}`}> 
-                            <Link to="/users"><i className="fa fa-shopping-cart"></i> <span>Products</span></Link>
+                        { user?.role?.permissions?.includes("Products") && <li className={`${location.pathname === "/product" ? "active" : ""}`}> 
+                            <Link to="/product"><i className="fa fa-shopping-cart"></i> <span>Products</span></Link>
                         </li> }
                         { user?.role?.permissions?.includes("Category") && <li className={`${location.pathname === "/category" ? "active" : ""}`}> 
-                            <Link to="/users"><i className="fa fa-apple"></i> <span>Category</span></Link>
+                            <Link to="/category"><i className="fa fa-apple"></i> <span>Category</span></Link>
                         </li> }
-                        { user?.role?.permissions?.includes("Tags") && <li className={`${location.pathname === "/tags" ? "active" : ""}`}> 
-                            <Link to="/users"><i className="fa fa-tags"></i> <span>Tags</span></Link>
+                        { user?.role?.permissions?.includes("Tags") && <li className={`${location.pathname === "/tag" ? "active" : ""}`}> 
+                            <Link to="/tag"><i className="fa fa-tags"></i> <span>Tags</span></Link>
+                        </li> }
+                        { user?.role?.permissions?.includes("Brands") && <li className={`${location.pathname === "/brand" ? "active" : ""}`}> 
+                            <Link to="/brand"><i className="fa fa-tags"></i> <span>Brands</span></Link>
                         </li> }
                         { user?.role?.permissions?.includes("Users") && <li className={`${location.pathname === "/users" ? "active" : ""}`}> 
                             <Link to="/users"><i className="fe fe-user"></i> <span>Users</span></Link>

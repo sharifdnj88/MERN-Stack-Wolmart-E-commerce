@@ -5,8 +5,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { registerUser } from "../../features/auth/authApiSlice";
 import { errorToast } from "../../utils/toast";
 import { getAuthSelector, setMessageEmpty } from "../../features/auth/authSlice";
+import { BiShow, BiHide } from "react-icons/bi";
 
 const Register = () => {
+
+	const [showPassword, setShowPassword] = useState(false);
+	const [conPassword, setConPassword] = useState(false);
 
 	const dispatch = useDispatch();
 	const { error, message } = useSelector(getAuthSelector);
@@ -17,6 +21,16 @@ const Register = () => {
 		password: "",
 		cpassword: ""
 	});
+
+	// show or Hide password
+	const handleShowPassword = () => {
+		setShowPassword((preve) => !preve);
+	};
+
+	// show or Hide password
+	const handleConPassword = () => {
+		setConPassword((preve) => !preve);
+	};
 
 	// handle input change
 	const handleInputChange = (e) => {
@@ -80,13 +94,19 @@ const Register = () => {
 										<input name="name" value={input.name} onChange={handleInputChange} className="form-control" type="text" placeholder="Name" />
 									</div>
 									<div className="form-group">
-										<input name="email" value={input.email} onChange={handleInputChange} className="form-control" type="text" placeholder="Email" />
+										<input name="email" value={input.email} onChange={handleInputChange} className="form-control" type="email" placeholder="Email" />										
 									</div>
-									<div className="form-group">
-										<input name="password" value={input.password} onChange={handleInputChange} className="form-control" type="text" placeholder="Password" />
+									<div className="form-group d-flex" style={{position: "relative"}}>
+										<input name="password" value={input.password} onChange={handleInputChange} className="form-control" type={showPassword ? "text" : "password"} placeholder="Password" />
+										<span className="password-show" onClick={handleShowPassword} >
+											{showPassword ? <BiShow /> : <BiHide />}
+										</span>
 									</div>
-									<div className="form-group">
-										<input name="cpassword" value={input.cpassword} onChange={handleInputChange} className="form-control" type="text" placeholder="Confirm Password" />
+									<div className="form-group d-flex" style={{position: "relative"}}>
+										<input name="cpassword" value={input.cpassword} onChange={handleInputChange} className="form-control" type={conPassword ? "text" : "password"} placeholder="Confirm Password" />
+										<span className="password-show" onClick={handleConPassword} >
+											{conPassword ? <BiShow /> : <BiHide />}
+										</span>
 									</div>
 									<div className="form-group mb-0">
 										<button className="btn btn-primary btn-block" type="submit">Register</button>
